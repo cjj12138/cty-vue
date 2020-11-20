@@ -45,7 +45,7 @@ export default {
             loading: false, //登陆状态
             loginForm:{  // 登陆表单
                 username: 'admin',
-                password: '123456'
+                password: '111111'
             },
             rules:{  //登陆验证规则
                 username:[
@@ -75,7 +75,7 @@ export default {
         },
         login(){
             this.$store
-                .dispatch('user/login',{username: this.loginForm.username})
+                .dispatch('user/login',this.loginForm)
                 .then(()=>{
                     this.loading = true
                     // 登陆成功后重定向

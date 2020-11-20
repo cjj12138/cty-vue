@@ -1,0 +1,51 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "554202",
+      "name": "垃圾桶",
+      "font_class": "iconset0213",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "954223",
+      "name": "积分商城-兑换折扣",
+      "font_class": "huiyuantequanduihuanzhekou",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
+      "icon_id": "1104689",
+      "name": "物流",
+      "font_class": "wuliu",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "7235211",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "7513411",
+      "name": "兑换",
+      "font_class": "duihuan",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "14313291",
+      "name": "查看",
+      "font_class": "chakan",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    }
+  ]
+}

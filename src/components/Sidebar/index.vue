@@ -2,24 +2,34 @@
   <div class="sidebar">
     <div class="sidebar-title">后台管理系统</div>
     <div class="sidebar-box">
-      <el-menu
-        class="el-menu-vertical-demo"
-        :collapse="false"
-        :default-active="activeMenu"
-        :background-color="variables.menuBg"
-        :text-color="variables.menuText"
-        :unique-opened="false"
-        :active-text-color="variables.menuActiveText"
-        :collapse-transition="false"
-        mode="vertical"
-      >
-        <SidebarItem
-          v-for="route in permission_routes"
-          :key="route.path"
-          :item="route"
-          :base-path="route.path"
-        ></SidebarItem>
-      </el-menu>
+      <el-col :span="12" style="height: 100%">
+        <el-menu
+                style="height: 100%"
+                default-active="2"
+                class="el-menu-vertical-demo"
+                @open="handleOpen"
+                @close="handleClose"
+                background-color="#545c64"
+                text-color="#fff"
+                active-text-color="#ffd04b">
+            <el-menu-item index="1" @click="sentStraight">
+              <i class="iconfont icon-wuliu"></i>
+              <span slot="title">就近直送</span>
+            </el-menu-item>
+          <el-menu-item index="2">
+            <i class="iconfont icon-iconset0213"></i>
+            <span slot="title">放入垃圾回收站</span>
+          </el-menu-item>
+          <el-menu-item index="3">
+            <i class="iconfont icon-chakan"></i>
+            <span slot="title">查看垃圾状态</span>
+          </el-menu-item>
+          <el-menu-item index="4">
+            <i class="iconfont  icon-huiyuantequanduihuanzhekou"></i>
+            <span slot="title">兑换积分商品</span>
+          </el-menu-item>
+        </el-menu>
+      </el-col>
     </div>
   </div>
 </template>
@@ -51,6 +61,17 @@ export default {
   },
   mounted() {
     // console.log(this.permission_routes,12)
+  },
+  methods:{
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    sentStraight(){
+      console.info(111111)
+    }
   }
 };
 </script>
@@ -76,7 +97,6 @@ export default {
   overflow-x: hidden;
   overflow-y: auto;
   -ms-overflow-style: none;
-  overflow: "-moz-scrollbars-none";
   scrollbar-width: none; /*  火狐   */
 }
 .sidebar-box::-webkit-scrollbar {

@@ -1,28 +1,6 @@
 <template>
-    <div v-if="!item.hidden" class="menu-wrapper">
-        <!-- 仅有一个可显示的子路由,并且没有孙子路由 && (!onlyOneChild.children || onlyOneChild.noShowingChildren) && item.alwaysShow-->
-        <template v-if="hasOneShowingChild(item.children,item)">
-            <router-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
-                <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown' : isNest }">
-                   
-                    <item :icon="onlyOneChild.meta.icon || (item.meta && item.meta.icon)" :title="onlyOneChild.meta.title" />
-                </el-menu-item>
-            </router-link>
-        </template>
-        <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
-            <template v-slot:title>
-                <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
-            </template>
-            <sidebar-item
-                v-for="child in item.children"
-                :key="child.path"
-                :is-nest='true'
-                :item='child'
-                :base-path="resolvePath(child.path)"
-                class="nest-menu"
-                />
-        </el-submenu>
-    </div>
+
+
 </template>
 
 <script>

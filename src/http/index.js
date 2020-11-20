@@ -30,7 +30,7 @@ service.interceptors.response.use(
         const res = response.data
 
         // code 不为0 则判断为一个错误
-        if(res.code !== 0){
+        if(res.code !== 2000){
             Message({
                 message: res.msg || "Error",
                 type: 'error',

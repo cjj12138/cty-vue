@@ -1,4 +1,5 @@
 import { getToken, setToken, removeToken } from '@/utils/auth'
+import {login, userLogin} from "../../api/user";
 
 // 村赤用户令牌和角色信息
 const state ={
@@ -19,9 +20,10 @@ const actions = {
     // 用户登录
     login({ commit }, userInfo) {
         const { username } = userInfo;
+        console.log(userInfo)
         return new Promise((resolve,reject) => {
             setTimeout(() => {
-                if(username === 'admin' || username === 'jerry'){
+                /*if(username === 'admin' || username === 'jerry'){
                     // 保存状态
                     commit('SET_TOKEN',username);
                     // 写入cookie
@@ -29,7 +31,16 @@ const actions = {
                     resolve()
                 }else{
                     reject('用户名或密码错误')
-                }
+                }*/
+                userLogin(userInfo).then(r =>{
+                    if (r.code===2000){
+                        commit('SET_TOKEN',r.username);
+                        setToken(r.username)
+                        resolve()
+                    }else {
+                        reject('用户名或密码错误')
+                    }
+                })
             },1000)
         })
     },

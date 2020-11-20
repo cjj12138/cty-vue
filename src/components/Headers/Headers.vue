@@ -4,7 +4,6 @@
             <div class="headers-left-box" :class="asideShow === false ? 'headers-left-active' : ''" @click="targetIcon">
                 <i class="el-icon-s-fold "></i>
             </div>
-            <Breadcrumb />
         </div>
         <div class="headers-right">
             <div class="headers-right-left">
@@ -38,8 +37,6 @@
 // 全屏组件
 import screenfull from 'screenfull'
 
-// 面包屑
-import Breadcrumb from '../Breadcrumb/Breadcrumb2'
 
 export default {
     props:{
@@ -55,7 +52,6 @@ export default {
         }
     },
     components:{
-        Breadcrumb
     },
     methods:{
         // 自定义 切换 侧边栏 事件

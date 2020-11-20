@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 
 import Layout from '@/layout' //布局页
 
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -15,7 +14,7 @@ export const constRouter = [
       hidden: true //导航菜单忽略选项
   },
   {
-      path: '',
+      path: '/',
       component: Layout, //应用布局页
       redirect: '/index',
       hidden: true,
@@ -28,9 +27,9 @@ export const constRouter = [
           title: "首页", //导航菜单项标题
           icon: 'el-icon-edit' //导航菜单图标
       },
-      children: [
+      /*children: [
         {
-          path: '',
+          path: '/',
           component: () => import('@/views/index/index.vue'),
           name: 'indexs',
           meta: {
@@ -39,7 +38,7 @@ export const constRouter = [
             roles: ['admin','jerry']
           }
         }
-      ]
+      ]*/
   }
 ]
 
@@ -100,7 +99,7 @@ export const asyncRoutes = [
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: process.env.VUE_APP_URL,
   routes: constRouter
 })
 
