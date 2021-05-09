@@ -93,6 +93,7 @@ export default {
                 case 'quit':
                     let src = this.$store.dispatch('user/resetToken')
                     this.$router.replace('/login')
+                    this.$router.go(0);
                 break;
 
             }
