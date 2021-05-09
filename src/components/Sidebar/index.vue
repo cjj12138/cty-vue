@@ -23,9 +23,13 @@
           </el-menu-item>
           <el-menu-item index="3" @click="buyShoes()">
             <i class="iconfont icon-chakan"></i>
-            <span slot="title" style="padding: 5px">购买球鞋</span>
+            <span slot="title" style="padding: 5px">系统公告</span>
           </el-menu-item>
           <el-menu-item index="4" @click="myFavt()">
+            <i class="iconfont icon-huiyuantequanduihuanzhekou"></i>
+            <span slot="title" style="padding: 5px">购买球鞋</span>
+          </el-menu-item>
+          <el-menu-item index="5" @click="AppraisalShoe()">
             <i class="iconfont  icon-huiyuantequanduihuanzhekou"></i>
             <span slot="title" style="padding: 5px">我的收藏</span>
           </el-menu-item>
@@ -55,7 +59,7 @@
             <i class="iconfont  icon-huiyuantequanduihuanzhekou"></i>
             <span slot="title" style="padding: 5px">数据统计</span>
           </el-menu-item>
-          <el-menu-item index="5" @click="myFavt()">
+          <el-menu-item index="5" @click="AppraisalShoe()">
             <i class="iconfont  icon-huiyuantequanduihuanzhekou"></i>
             <span slot="title" style="padding: 5px">球鞋鉴定</span>
           </el-menu-item>
@@ -120,6 +124,10 @@ export default {
     },
     myFavt(){
       this.userIndex=4
+      this.$store.dispatch("setUserIndex",this.userIndex)
+    },
+    AppraisalShoe(){
+      this.userIndex=5
       this.$store.dispatch("setUserIndex",this.userIndex)
     },
     getUserRoleIdA() {

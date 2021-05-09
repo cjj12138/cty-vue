@@ -45,6 +45,7 @@ export const getAllUser = params =>{
   )
 }
 
+
 export const updateUserInfo = param =>{
   return axios.post('/user/updateUserInfo',param).then(
       res=>veRiFi(res)
@@ -74,6 +75,24 @@ export const getGoodByAdmin =param =>{
   )
 }
 
+export const updateGoodStatus = params =>{
+  return axios.post(
+      'admin/updateGoodStatus',
+      params
+  ).then(
+      res=>veRiFi(res)
+  )
+}
+
+export const getAppraisalShoes = params =>{
+  return axios.post(
+      'admin/getAppraisalShoes',
+      params
+  ).then(
+      res=>veRiFi(res)
+  )
+}
+
 export const getAllGoodsMorePic = param =>{
   return axios.post('/user/getAllGoodsMorePic',param).then(
       res=>veRiFi(res)
@@ -82,4 +101,8 @@ export const getAllGoodsMorePic = param =>{
 
 export const getUserRoleIdWithAdmin = param =>{
   return axios.post('/admin/getRoleId',param).then(res=>veRiFi(res))
+}
+
+export const creatOrder = param=>{
+  return axios.post('/user/creatOrder',param).then(res=>veRiFi(res))
 }
