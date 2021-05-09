@@ -1,6 +1,8 @@
 <template>
   <el-form ref="form" :model="userInfo" style="
-    width: 400px;padding: 12px">
+    width: 400px;
+    margin-left: 5%;
+    margin-top: 3%;">
     <el-form-item label="用户ID">
       <el-input v-model="userInfo.userId" disabled></el-input>
     </el-form-item>

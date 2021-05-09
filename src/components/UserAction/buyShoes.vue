@@ -2,13 +2,21 @@
   <div>
     <div>
       <el-row>
-        <el-col :span="8" v-for="(item, index) in goodList" v-if="isShowList">
-          <el-card :body-style="{ padding: '0px',height :'250px'}">
-            <img :src="item.goodPic[0]" class="image">
-            <div style="padding: 14px;">
-              <span>{{ item.goodName }}</span>
+        <el-col :span="6" v-for="(item, index) in goodList" v-if="isShowList">
+          <el-card :body-style="{ padding: '0px',height :'200px'}">
+            <div style="position: fixed;padding: 10px;">
+              <img :src="item.goodPic[0]" class="image">
+            </div>
+            <div style="padding-left: 60%;padding-top: 10px;">
+              <span><b>{{ item.goodName }}</b></span>
+              <br>
+              <span>￥{{ item.goodPrice }}</span>
+              <br>
+              <br>
+              <span><i>{{ item.goodDes }}</i></span>
+            </div>
+            <div style="padding: 14px;float: right">
               <div class="bottom clearfix">
-                <span>{{ item.goodPrice }}</span>
                 <el-button type="text" class="button" @click="getDetail(item)">查看详情</el-button>
               </div>
             </div>
@@ -147,7 +155,7 @@ export default {
 }
 
 .bottom {
-  margin-top: 13px;
+  margin-top: 120px;
   line-height: 12px;
 }
 
