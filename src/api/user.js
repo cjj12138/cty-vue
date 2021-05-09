@@ -59,3 +59,9 @@ export const getAllGoodsWithUser =param =>{
       res=>veRiFi(res)
   )
 }
+
+export const getAllGoodsMorePic = param =>{
+  return axios.post('/user/getAllGoodsMorePic',param).then(
+      res=>veRiFi(res)
+  )
+}
