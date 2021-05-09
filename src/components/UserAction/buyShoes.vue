@@ -49,6 +49,11 @@
             <el-form-item label="商品价格">
               <el-input v-model="shoes.goodPrice" disabled></el-input>
             </el-form-item>
+            <el-form-item label="商品尺码">
+              <el-input v-model="shoes.goodSize" disabled></el-input>
+            </el-form-item>
+            <el-button @click="buyNow()">我要购买</el-button>
+            <el-button @click="collection">我喜欢</el-button>
           </el-form>
         </div>
       </el-main>
