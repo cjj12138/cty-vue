@@ -16,7 +16,7 @@
           </div>
           <div style="padding: 14px;float: right">
             <div class="bottom clearfix">
-              <el-button type="text" class="button" @click="getDetail(item)">查看详情</el-button>
+<!--              <el-button type="text" class="button" @click="getDetail(item)">查看详情</el-button>-->
             </div>
           </div>
         </el-card>
@@ -59,7 +59,42 @@ export default {
   }
 }
 </script>
-
 <style scoped>
+  .time {
+    font-size: 13px;
+    color: #999;
+  }
 
+  .bottom {
+    margin-top: 120px;
+    line-height: 12px;
+  }
+
+  .button {
+    padding: 0;
+    float: right;
+  }
+
+  .image {
+    width: 240px;
+    height: 180px;
+    display: block;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+
+  .clearfix:after {
+    clear: both
+  }
+
+  .el-carousel__item h3 {
+    color: #475669;
+    font-size: 18px;
+    opacity: 0.75;
+    margin: 0;
+  }
 </style>
