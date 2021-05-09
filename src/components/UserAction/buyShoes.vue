@@ -21,14 +21,15 @@
 
       </el-aside>
       <el-main>
-        <div class="block" >
-          <div style="float: left">
-            <el-carousel trigger="click" height="500px" style="width: 400px">
-              <el-carousel-item v-for="item in good.goodPic" :key="item">
-                <img :src="item" class="image" style="text-align: center;height: 500px;width: 400px;">
-              </el-carousel-item>
-            </el-carousel>
-          </div>
+
+        <div style="position: fixed;margin-left: 35%;">
+          <el-carousel trigger="click" height="500px" style="width: 500px">
+            <el-carousel-item v-for="item in good.goodPic" :key="item">
+              <img :src="item" class="image" style="text-align: center;height: 500px;width: 500px;">
+            </el-carousel-item>
+          </el-carousel>
+        </div>
+        <div style="position: fixed;margin-top: 20px">
           <div>
             <el-form ref="form" :model="form" label-width="80px">
               <el-form-item label="活动名称">
