@@ -88,7 +88,6 @@ export default {
             this.$router.push({
               path: this.$route.query.redirect || '/index'
             })
-
           },
           this.$store.dispatch("setUser",this.loginForm.userId))
           .catch(err => {

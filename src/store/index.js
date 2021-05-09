@@ -8,7 +8,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     userIndex:3,
-    userInfo:{}
+    userInfo:{},
+    roleId:-1,
   },
   mutations: {
     userIndex(state,index){
@@ -16,6 +17,9 @@ export default new Vuex.Store({
     },
     userInfo(state,user){
       state.userInfo=user
+    },
+    roleId(state,roleId){
+      state.roleId=roleId
     }
   },
   actions: {
@@ -24,6 +28,9 @@ export default new Vuex.Store({
     },
     setUser({commit,state},user){
       commit("userInfo",user)
+    },
+    setRoleId({commit,state},roleId){
+      commit("roleId",roleId)
     }
   },
   modules: {
@@ -40,6 +47,9 @@ export default new Vuex.Store({
     },
     getUserId(state){
       return state.userInfo
+    },
+    getRoleId(state){
+      return state.roleId
     }
   }
 })
