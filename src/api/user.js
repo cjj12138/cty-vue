@@ -36,6 +36,14 @@ export const getUserInfo = params =>{
   )
 }
 
+export const getAllUser = params =>{
+  return axios.post(
+      '/admin/getAllUser',
+      params
+  ).then(
+      res=>veRiFi(res)
+  )
+}
 
 export const updateUserInfo = param =>{
   return axios.post('/user/updateUserInfo',param).then(
@@ -56,6 +64,12 @@ export const uploadShoes = param =>{
 
 export const getAllGoodsWithUser =param =>{
   return axios.post('/user/getAllGoods',param).then(
+      res=>veRiFi(res)
+  )
+}
+
+export const getGoodByAdmin =param =>{
+  return axios.post('/admin/getGoodByAdmin',param).then(
       res=>veRiFi(res)
   )
 }

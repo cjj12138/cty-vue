@@ -7,7 +7,7 @@
       <buy-shoes v-if="this.$store.getters.getUserIndex===3"></buy-shoes>
     </div>
     <div v-if="this.$store.getters.getRoleId==1">
-
+      <User-info v-if="this.$store.getters.getUserIndex===1"></User-info>
     </div>
   </div>
 </template>

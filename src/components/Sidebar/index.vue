@@ -30,6 +30,36 @@
             <span slot="title" style="padding: 5px">我的收藏</span>
           </el-menu-item>
         </el-menu>
+        <el-menu v-if="this.$store.getters.getRoleId==1"
+                 style="height: 100%"
+                 default-active="3"
+                 class="el-menu-vertical-demo"
+                 @open="handleOpen"
+                 @close="handleClose"
+                 background-color="#545c64"
+                 text-color="#fff"
+                 active-text-color="#ffd04b">
+          <el-menu-item index="1" @click="userInfo()">
+            <i class="iconfont icon-wuliu"></i>
+            <span slot="title" style="padding: 5px">用户管理</span>
+          </el-menu-item>
+          <el-menu-item index="2" @click="sellShoes()">
+            <i class="iconfont icon-iconset0213"></i>
+            <span slot="title" style="padding: 5px">球鞋管理</span>
+          </el-menu-item>
+          <el-menu-item index="3" @click="buyShoes()">
+            <i class="iconfont icon-chakan"></i>
+            <span slot="title" style="padding: 5px">发布公告</span>
+          </el-menu-item>
+          <el-menu-item index="4" @click="myFavt()">
+            <i class="iconfont  icon-huiyuantequanduihuanzhekou"></i>
+            <span slot="title" style="padding: 5px">数据统计</span>
+          </el-menu-item>
+          <el-menu-item index="5" @click="myFavt()">
+            <i class="iconfont  icon-huiyuantequanduihuanzhekou"></i>
+            <span slot="title" style="padding: 5px">球鞋鉴定</span>
+          </el-menu-item>
+        </el-menu>
       </el-col>
     </div>
   </div>
