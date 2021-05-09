@@ -13,7 +13,7 @@
             </el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input v-model="loginForm.password" placeholder="请输入密码" size="medium">
+            <el-input v-model="loginForm.password" show-password placeholder="请输入密码" size="medium">
               <el-button slot="prepend" icon="el-icon-key"></el-button>
             </el-input>
           </el-form-item>
@@ -62,6 +62,10 @@ export default {
         ]
       }
     }
+  },
+  mounted() {
+    this.loginForm.userId='cty';
+    this.loginForm.password='123456';
   },
   methods: {
     submitForm(formName) {
