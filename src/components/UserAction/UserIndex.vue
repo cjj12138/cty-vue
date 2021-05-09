@@ -4,7 +4,12 @@
       <User-info v-if="this.$store.getters.getUserIndex===1"></User-info>
       <sell-shoes v-if="this.$store.getters.getUserIndex===2"
                   style="width: 400px;margin-left: 5%;margin-top: 3%"></sell-shoes>
+<<<<<<< Updated upstream
       <buy-shoes v-if="this.$store.getters.getUserIndex===4"></buy-shoes>
+=======
+      <buy-shoes v-if="this.$store.getters.getUserIndex===3"></buy-shoes>
+      <my-collection v-if="this.$store.getters.getUserIndex===4" style="width: 400px;margin-left: 5%;margin-top: 3%"></my-collection>
+>>>>>>> Stashed changes
     </div>
     <div v-if="this.$store.getters.getRoleId==1">
       <User-info v-if="this.$store.getters.getUserIndex===1"></User-info>
@@ -18,14 +23,22 @@
 import UserInfo from "@/components/UserAction/UserInfo";
 import SellShoes from "@/components/UserAction/sellShoes";
 import BuyShoes from "@/components/UserAction/buyShoes";
+<<<<<<< Updated upstream
 import AppraisalShoes from "@/components/UserAction/AppraisalShoes";
+=======
+import MyCollection from "@/components/UserAction/myCollection";
+>>>>>>> Stashed changes
 
 export default {
   name: "UserIndex",
   mounted() {
 
   },
+<<<<<<< Updated upstream
   components: {BuyShoes, SellShoes, UserInfo,AppraisalShoes},
+=======
+  components: {MyCollection, BuyShoes, SellShoes, UserInfo},
+>>>>>>> Stashed changes
   data() {
   }
 }
