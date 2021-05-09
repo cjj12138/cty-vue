@@ -72,8 +72,8 @@
             </div>
             <div style="padding: 14px;float: right">
               <div class="bottom clearfix">
-                <el-button type="text" class="button" @click="comingShoe(item,1)">上架</el-button>
-                <el-button type="text" class="button" style="margin-left:20px" @click="comingShoe(item,-1)">驳回</el-button>
+                <el-button type="text" class="button" style="margin-left:10px" @click="comingShoe(item,1)">上架</el-button>
+                <el-button type="text" class="button" @click="comingShoe(item,-1)">驳回</el-button>
               </div>
             </div>
           </el-card>

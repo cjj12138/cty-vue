@@ -18,8 +18,7 @@
                             </div>
                             <div style="padding: 14px;float: right">
                                 <div class="bottom clearfix">
-                                    <el-button type="text" class="button" @click="comingShoe(item,1)">上架</el-button>
-                                    <el-button type="text" class="button" style="margin-left:20px" @click="comingShoe(item,-1)">驳回</el-button>
+                                    <el-button type="text" class="button" @click="getDetail(item)">查看详情</el-button>
                                 </div>
                             </div>
                         </el-card>
@@ -69,8 +68,8 @@
                             <el-form-item label="商品尺码">
                                 <el-input v-model="shoes.goodSize" disabled></el-input>
                             </el-form-item>
-                            <el-button @click="buyNow()">我要购买</el-button>
-                            <el-button>我喜欢</el-button>
+                            <el-button @click="check(shoes.goodId,3)">通过审核</el-button>
+                            <el-button @click="check(shoes.goodId,-1)">驳回审核</el-button>
                         </el-form>
                     </div>
                 </el-main>
@@ -80,7 +79,7 @@
 </template>
 
 <script>
-    import {getAppraisalShoes} from "../../api/user";
+    import { getAppraisalShoes,updateGoodStatus} from "../../api/user";
 
     export default {
         name: "AppraisalShoes",
@@ -106,6 +105,38 @@
                 }
             })
         },
+        methods:{
+            getDetail(item) {
+                this.isShow = true;
+                this.isShowList = false;
+                let goodId = item.goodId;
+                let param = {goodId: goodId}
+                getAppraisalShoes(param).then(res => {
+                    console.log(res)
+                    for (let i = 0; i < res.data[0].goodPic.length; i++) {
+                        res.data[0].goodPic[i] = require("@/assets/storeMsg/" + res.data[0].goodPic[i])
+                    }
+                    this.good = res.data[0]
+                    this.shoes =this.good
+                })
+            },
+            check(id,status){
+                let par={goodId:id,status:status}
+                updateGoodStatus(par).then(res => {
+                    this.$message(res.msg);
+                    this.isShowList = false;
+                    getAppraisalShoes().then(res => {
+                        if (res.code === 2000) {
+                            console.log(res.data)
+                            this.goodList = res.data
+                            for (let i = 0; i < this.goodList.length; i++) {
+                                this.goodList[i].goodPic[0] = require("@/assets/storeMsg/" + this.goodList[i].goodPic[0])
+                            }
+                        }
+                    })
+                })
+            }
+        }
     }
 </script>
 
