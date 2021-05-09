@@ -1,9 +1,10 @@
 <template>
+  <div>
   <div class="sidebar">
     <div class="sidebar-title">球鞋交易市场</div>
     <div class="sidebar-box">
       <el-col :span="12" style="height: 100%">
-        <el-menu
+        <el-menu v-if="this.$store.getters.getRoleId==0"
                 style="height: 100%"
                 default-active="3"
                 class="el-menu-vertical-demo"
@@ -32,10 +33,12 @@
       </el-col>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import {getUserRoleIdWithAdmin} from "@/api/user";
 
 export default {
   data() {
@@ -64,7 +67,7 @@ export default {
     }
   },
   mounted() {
-    // console.log(this.permission_routes,12)
+    this.getUserRoleIdA()
   },
   methods:{
     handleOpen(key, keyPath) {
@@ -88,9 +91,17 @@ export default {
     myFavt(){
       this.userIndex=4
       this.$store.dispatch("setUserIndex",this.userIndex)
+    },
+    getUserRoleIdA() {
+      let params={userId:this.$store.getters.getUserId}
+      console.log(params)
+      getUserRoleIdWithAdmin(params).then(res=>{
+        console.log(res)
+        this.$store.dispatch("setRoleId",res.data.userRoleId)
+      })
     }
 
-  }
+  },
 };
 </script>
 

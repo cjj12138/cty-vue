@@ -46,8 +46,8 @@ export default {
     return {
       loading: false, //登陆状态
       loginForm: {  // 登陆表单
-        userId: 'cty',
-        password: '123456'
+        userId: '',
+        password: ''
       },
       rules: {  //登陆验证规则
         userId: [
@@ -84,7 +84,6 @@ export default {
             this.$router.push({
               path: this.$route.query.redirect || '/index'
             })
-
           },
           this.$store.dispatch("setUser",this.loginForm.userId))
           .catch(err => {
