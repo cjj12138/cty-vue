@@ -173,16 +173,19 @@ export default {
     collection(){
       let params={goodId:this.shoes.goodId,userId:this.$store.getters.getUserId}
       myCollection(params).then(res=>{
-
+        if (res.code===2000){
+          this.$message.success("收藏成功")
+        }
       })
     },
     buyNow(){
       console.log(this.shoes)
       let params={goodId:this.shoes.goodId,userId:this.$store.getters.getUserId}
       creatOrder(params).then(res=>{
-        if (res.data.code===2000){
+        if (res.code===2000){
           this.isShowList=true;
           this.isShow=false;
+          this.getAllGoods()
         }
       })
     },

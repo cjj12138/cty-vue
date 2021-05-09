@@ -17,6 +17,7 @@
           <div style="padding: 14px;float: right">
             <div class="bottom clearfix">
 <!--              <el-button type="text" class="button" @click="getDetail(item)">查看详情</el-button>-->
+              <el-button type="text" class="button" @click="deleteMyLove(item)">删除我的最爱</el-button>
             </div>
           </div>
         </el-card>
@@ -26,7 +27,7 @@
 </template>
 
 <script>
-import {getMyfvt} from "@/api/user";
+import {deleteMyLoveShoes, getMyfvt} from "@/api/user";
 
 export default {
   name: "myCollection",
@@ -54,6 +55,15 @@ export default {
             this.goodList[i].goodPic[0] = require("@/assets/storeMsg/" + this.goodList[i].goodPic[0])
           }
         }
+      })
+    },
+    deleteMyLove(item){
+      let param={goodId:item.goodId,userId:this.$store.getters.getUserId}
+      deleteMyLoveShoes(param).then(res=>{
+        if (res.code===2000){
+          this.$message.success("删除成功")
+        }
+        this.getMyCollection()
       })
     }
   }

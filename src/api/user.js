@@ -114,3 +114,7 @@ export const myCollection = param =>{
 export const  getMyfvt =param =>{
   return axios.post('/user/getMyfvt',param).then(res=>veRiFi(res))
 }
+
+export const deleteMyLoveShoes = param =>{
+  return axios.post('/user/deleteMyLove',param).then(res=>veRiFi(res))
+}
