@@ -9,10 +9,7 @@
                     <Headers :asideShow.sync="asideShow" @targetIcon='targetIcon'></Headers>
                 </el-header>
                 <el-main class="main-container">
-                    <TagsViews />
-                    <div class="main-container-views">
-                        <router-view />
-                    </div>
+                    <router-view />
                 </el-main>
             </el-container>
         </el-container>
@@ -22,7 +19,6 @@
 <script>
 import Sidebar from '../components/Sidebar/index.vue'
 import Headers from '../components/Headers/Headers.vue'
-import TagsViews from '../components/TageView/TagsView.vue'
 export default {
     data(){
         return {
@@ -31,8 +27,7 @@ export default {
     },
     components: {
         Sidebar,
-        Headers,
-        TagsViews
+        Headers
     },
     methods:{
         targetIcon(boole){
@@ -81,7 +76,7 @@ export default {
     height: calc(100% - 35px);
     overflow-x: hidden;
     overflow-y: auto;
-    -ms-overflow-style: none; 
+    -ms-overflow-style: none;
     overflow: '-moz-scrollbars-none';
     scrollbar-width: none;  /*  火狐   */
 }

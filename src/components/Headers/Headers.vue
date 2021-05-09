@@ -6,16 +6,6 @@
             </div>
         </div>
         <div class="headers-right">
-            <div class="headers-right-left">
-                <el-tooltip class="item" effect="dark" :content="isFullscreen ? '取消全屏' : '全屏'" placement="bottom">
-                    <i :class="isFullscreen ? 'el-icon-full-screen head-screen-news' : 'el-icon-rank head-screen'" @click="buttoncli"></i>
-                </el-tooltip>
-                <el-tooltip class="item" effect="dark" content="有5条未读消息" placement="bottom">
-                    <el-badge is-dot class="item">
-                        <i class="el-icon-bell head-news-icon"></i>
-                    </el-badge>
-                </el-tooltip>
-            </div>
             <div class="headers-right-right">
                 <div class="block"><el-avatar shape="square" size="large" :src="squareUrl"></el-avatar></div>
                 <el-dropdown size="medium" @command="handleCommand">
@@ -23,12 +13,11 @@
                         下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
                     </span>
                     <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item command="github">项目仓库</el-dropdown-item>
                         <el-dropdown-item divided command="quit">退出登录</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
             </div>
-            
+
         </div>
     </div>
 </template>
@@ -95,7 +84,7 @@ export default {
         },
         // 用户名 下拉菜单
         handleCommand(command){
-          
+
             switch(command){
                 case 'github':
                     console.log('前往github')
@@ -148,7 +137,7 @@ export default {
     line-height: 50px;
     font-size: 20px;
     cursor: pointer;
-    
+
 }
 .el-breadcrumb{
     line-height: 50px;
@@ -169,7 +158,7 @@ export default {
     cursor: pointer;
 }
 .head-news-icon{
-    
+
 }
 .head-screen{
     margin-right: 15px;

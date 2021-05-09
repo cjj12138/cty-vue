@@ -27,10 +27,10 @@ export const constRouter = [
           title: "首页", //导航菜单项标题
           icon: 'el-icon-edit' //导航菜单图标
       },
-      /*children: [
+      children: [
         {
           path: '/',
-          component: () => import('@/views/index/index.vue'),
+          component: () => import('@/components/UserAction/UserIndex'),
           name: 'indexs',
           meta: {
             title: "首页",
@@ -38,7 +38,7 @@ export const constRouter = [
             roles: ['admin','jerry']
           }
         }
-      ]*/
+      ]
   }
 ]
 
