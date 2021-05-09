@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <div class="sidebar-title">球鞋交易市场</div>
+    <div class="sidebar-title"><b>球鞋交易市场</b></div>
     <div class="sidebar-box">
       <el-col :span="12" style="height: 100%">
         <el-menu
@@ -14,19 +14,19 @@
                 active-text-color="#ffd04b">
             <el-menu-item index="1" @click="userInfo()">
               <i class="iconfont icon-wuliu"></i>
-              <span slot="title">个人信息</span>
+              <span slot="title" style="padding: 5px">个人信息</span>
             </el-menu-item>
           <el-menu-item index="2" @click="sellShoes()">
             <i class="iconfont icon-iconset0213"></i>
-            <span slot="title">售卖球鞋</span>
+            <span slot="title" style="padding: 5px">售卖球鞋</span>
           </el-menu-item>
           <el-menu-item index="3" @click="buyShoes()">
             <i class="iconfont icon-chakan"></i>
-            <span slot="title">购买球鞋</span>
+            <span slot="title" style="padding: 5px">购买球鞋</span>
           </el-menu-item>
           <el-menu-item index="4" @click="myFavt()">
             <i class="iconfont  icon-huiyuantequanduihuanzhekou"></i>
-            <span slot="title">我的收藏</span>
+            <span slot="title" style="padding: 5px">我的收藏</span>
           </el-menu-item>
         </el-menu>
       </el-col>
