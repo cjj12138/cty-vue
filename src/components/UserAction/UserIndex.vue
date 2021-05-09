@@ -4,6 +4,9 @@
     <sell-shoes v-if="this.$store.getters.getUserIndex===2" style="width: 400px;margin-left: 5%;margin-top: 3%"></sell-shoes>
     <buy-shoes v-if="this.$store.getters.getUserIndex===3"></buy-shoes>
   </div>
+  <div v-if="this.$store.getters.getRoleId==1">
+    
+  </div>
 </template>
 
 <script>
