@@ -52,7 +52,7 @@
               <el-input v-model="shoes.goodSize" disabled></el-input>
             </el-form-item>
             <el-button @click="buyNow()">我要购买</el-button>
-            <el-button>我喜欢</el-button>
+            <el-button @click="collection()">我喜欢</el-button>
           </el-form>
         </div>
       </el-main>
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import {creatOrder, getAllGoodsMorePic, getAllGoodsWithUser} from "@/api/user";
+import {creatOrder, getAllGoodsMorePic, getAllGoodsWithUser, myCollection} from "@/api/user";
 
 export default {
   name: "buyShoes",
@@ -79,6 +79,12 @@ export default {
     this.getAllGoods();
   },
   methods: {
+    collection(){
+      let params={goodId:this.shoes.goodId,userId:this.$store.getters.getUserId}
+      myCollection(params).then(res=>{
+
+      })
+    },
     buyNow(){
       console.log(this.shoes)
       let params={goodId:this.shoes.goodId,userId:this.$store.getters.getUserId}
