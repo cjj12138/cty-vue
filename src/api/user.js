@@ -106,3 +106,11 @@ export const getUserRoleIdWithAdmin = param =>{
 export const creatOrder = param=>{
   return axios.post('/user/creatOrder',param).then(res=>veRiFi(res))
 }
+
+export const myCollection = param =>{
+  return axios.post('/user/myCollection',param).then(res=>veRiFi(res))
+}
+
+export const  getMyfvt =param =>{
+  return axios.post('/user/getMyfvt',param).then(res=>veRiFi(res))
+}
