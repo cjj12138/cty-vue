@@ -83,3 +83,7 @@ export const getAllGoodsMorePic = param =>{
 export const getUserRoleIdWithAdmin = param =>{
   return axios.post('/admin/getRoleId',param).then(res=>veRiFi(res))
 }
+
+export const creatOrder = param=>{
+  return axios.post('/user/creatOrder',param).then(res=>veRiFi(res))
+}

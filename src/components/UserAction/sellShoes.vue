@@ -10,6 +10,9 @@
       <el-form-item label="商品价格">
         <el-input v-model="shoes.goodPrice"></el-input>
       </el-form-item>
+      <el-form-item label="商品尺码">
+        <el-input v-model="shoes.goodSize"></el-input>
+      </el-form-item>
       <el-form-item>
         <el-upload
             action="https://jsonplaceholder.typicode.com/posts/"
@@ -44,7 +47,8 @@ export default {
       shoes: {
         goodName: '',
         goodDes: '',
-        goodPrice: ''
+        goodPrice: '',
+        goodSize:''
       },
       fileList: []
     };
@@ -74,11 +78,13 @@ export default {
       param.append('goodDes', this.shoes.goodDes)
       param.append('goodPrice', this.shoes.goodPrice)
       param.append('userId', this.$store.getters.getUserId)
+      param.append("goodSize",this.shoes.goodSize)
       uploadShoes(param).then(res => {
         if (res.data.code == 2000) {
           this.shoes.goodPrice = '';
           this.shoes.goodName = '';
           this.shoes.goodDes = '';
+          this.shoes.goodSize=''
           this.fileList = []
           this.$refs['my-upload'].clearFiles()
         }

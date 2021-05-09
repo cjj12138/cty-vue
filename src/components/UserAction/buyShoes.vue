@@ -39,7 +39,7 @@
         </div>
         <div style="position: fixed;margin-top: 20px">
           <el-form ref="form" :model="shoes" label-width="80px">
-            <el-form-item label="商品标题">
+            <el-form-item label="商品名称">
               <el-input v-model="shoes.goodName" disabled></el-input>
             </el-form-item>
             <el-form-item label="商品描述">
@@ -48,6 +48,11 @@
             <el-form-item label="商品价格">
               <el-input v-model="shoes.goodPrice" disabled></el-input>
             </el-form-item>
+            <el-form-item label="商品尺码">
+              <el-input v-model="shoes.goodSize" disabled></el-input>
+            </el-form-item>
+            <el-button @click="buyNow()">我要购买</el-button>
+            <el-button>我喜欢</el-button>
           </el-form>
         </div>
       </el-main>
@@ -56,7 +61,7 @@
 </template>
 
 <script>
-import {getAllGoodsMorePic, getAllGoodsWithUser} from "@/api/user";
+import {creatOrder, getAllGoodsMorePic, getAllGoodsWithUser} from "@/api/user";
 
 export default {
   name: "buyShoes",
@@ -66,13 +71,21 @@ export default {
       goodList: [],
       isShow: false,
       isShowList: true,
-      good: {}
+      good: {},
+      shoes:{}
     };
   },
   mounted() {
     this.getAllGoods();
   },
   methods: {
+    buyNow(){
+      console.log(this.shoes)
+      let params={goodId:this.shoes.goodId,userId:this.$store.getters.getUserId}
+      creatOrder(params).then(res=>{
+
+      })
+    },
     getAllGoods() {
       getAllGoodsWithUser().then(res => {
         console.log(res)
