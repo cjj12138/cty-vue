@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row>
-      <el-col :span="6" v-for="(item, index) in goodList" v-if="isShowList">
+      <el-col :span="6" v-for="(item, index) in goodList">
         <el-card :body-style="{ padding: '0px',height :'200px'}">
           <div style="position: fixed;padding: 10px;">
             <img :src="item.goodPic[0]" class="image">
@@ -41,7 +41,7 @@ export default {
     };
   },
   mounted() {
-
+    this.getMyCollection()
   },
   methods:{
     getMyCollection(){
