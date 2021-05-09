@@ -180,7 +180,10 @@ export default {
       console.log(this.shoes)
       let params={goodId:this.shoes.goodId,userId:this.$store.getters.getUserId}
       creatOrder(params).then(res=>{
-
+        if (res.data.code===2000){
+          this.isShowList=true;
+          this.isShow=false;
+        }
       })
     },
     getAllGoods() {
