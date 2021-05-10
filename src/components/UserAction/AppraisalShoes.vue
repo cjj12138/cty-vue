@@ -125,7 +125,6 @@
                 let par={goodId:id,status:status}
                 updateGoodStatus(par).then(res => {
                     this.$message(res.msg);
-                    this.isShowList = false;
                     getAppraisalShoes().then(res => {
                         if (res.code === 2000) {
                             console.log(res.data)
@@ -133,6 +132,8 @@
                             for (let i = 0; i < this.goodList.length; i++) {
                                 this.goodList[i].goodPic[0] = require("@/assets/storeMsg/" + this.goodList[i].goodPic[0])
                             }
+                            this.isShowList = true;
+                            this.isShow = false;
                         }
                     })
                 })

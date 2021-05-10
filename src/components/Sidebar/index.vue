@@ -33,6 +33,10 @@
             <i class="iconfont  icon-huiyuantequanduihuanzhekou"></i>
             <span slot="title" style="padding: 5px">我的收藏</span>
           </el-menu-item>
+          <el-menu-item index="6" @click="setMyOrder()">
+            <i class="iconfont  icon-huiyuantequanduihuanzhekou"></i>
+            <span slot="title" style="padding: 5px">我的订单</span>
+          </el-menu-item>
         </el-menu>
         <el-menu v-if="this.$store.getters.getRoleId==1"
                  style="height: 100%"
@@ -128,6 +132,10 @@ export default {
     },
     AppraisalShoe(){
       this.userIndex=5
+      this.$store.dispatch("setUserIndex",this.userIndex)
+    },
+    setMyOrder(){
+      this.userIndex=6
       this.$store.dispatch("setUserIndex",this.userIndex)
     },
     getUserRoleIdA() {

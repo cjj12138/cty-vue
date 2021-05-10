@@ -122,3 +122,11 @@ export const deleteMyLoveShoes = param =>{
 export const getSystemNotification = param =>{
   return axios.post('/user/getSystemNotification',param).then(res=>veRiFi(res))
 }
+
+export const getMyOrder = param =>{
+  return axios.post('/user/getMyOrder',param).then(res=>veRiFi(res));
+}
+
+export const shipItem =param =>{
+  return axios.post('/user/shipItem',param).then(res=>veRiFi(res));
+}
