@@ -130,3 +130,7 @@ export const getMyOrder = param =>{
 export const shipItem =param =>{
   return axios.post('/user/shipItem',param).then(res=>veRiFi(res));
 }
+
+export const insertAnnounceMsg =param =>{
+  return axios.post('/admin/setSystemNotification',param).then(res=>veRiFi(res));
+}
