@@ -118,3 +118,7 @@ export const  getMyfvt =param =>{
 export const deleteMyLoveShoes = param =>{
   return axios.post('/user/deleteMyLove',param).then(res=>veRiFi(res))
 }
+
+export const getSystemNotification = param =>{
+  return axios.post('/user/getSystemNotification',param).then(res=>veRiFi(res))
+}

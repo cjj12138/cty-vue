@@ -4,6 +4,7 @@
       <User-info v-if="this.$store.getters.getUserIndex===1"></User-info>
       <sell-shoes v-if="this.$store.getters.getUserIndex===2"
                   style="width: 400px;margin-left: 5%;margin-top: 3%"></sell-shoes>
+      <system-notice v-if="this.$store.getters.getUserIndex===3"></system-notice>
       <buy-shoes v-if="this.$store.getters.getUserIndex===4"></buy-shoes>
       <my-collection v-if="this.$store.getters.getUserIndex===5"></my-collection>
     </div>
@@ -21,6 +22,7 @@ import SellShoes from "@/components/UserAction/sellShoes";
 import BuyShoes from "@/components/UserAction/buyShoes";
 import AppraisalShoes from "@/components/UserAction/AppraisalShoes";
 import MyCollection from "@/components/UserAction/myCollection";
+import SystemNotice from "./systemNotice";
 
 
 export default {
@@ -28,7 +30,7 @@ export default {
   mounted() {
 
   },
-  components: {BuyShoes, SellShoes, UserInfo,AppraisalShoes,MyCollection,},
+  components: {SystemNotice, BuyShoes, SellShoes, UserInfo,AppraisalShoes,MyCollection,},
 
   data() {
   }
